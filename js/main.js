@@ -2,15 +2,17 @@ const startButton = document.getElementById("start_game")
 let selector = document.getElementById("difficulty-selector")
 
 let grid = document.getElementById("grid")
+const difficulties = [10,9,7]
 
 startButton.addEventListener("click",function() {
-    const difficulty = selector.value
-    generateGrid()
+    grid.innerHTML = ""
+    let difficulty = Math.pow(difficulties[selector.value],2)
+    generateGrid(difficulty)
 })
 
-function generateGrid() {
+function generateGrid(difficulty) {
 
-    for (i = 1; i <= 100; i++) {
+    for (i = 1; i <= difficulty; i++) {
         let numLi = document.createElement("li")
         numLi.innerHTML = i
         numLi.setAttribute("number",i)
