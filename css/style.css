@@ -1,0 +1,16 @@
+#grid { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+#grid > li {
+    flex: 0 0 calc((100% / 10) - 1px);
+    aspect-ratio: 1;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
