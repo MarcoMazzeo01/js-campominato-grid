@@ -2,11 +2,12 @@ const startButton = document.getElementById("start_game")
 let selector = document.getElementById("difficulty-selector")
 
 let grid = document.getElementById("grid")
-const difficulties = [10,9,7]
+let rootRules = document.querySelector(":root")
 
 startButton.addEventListener("click",function() {
     grid.innerHTML = ""
-    let difficulty = Math.pow(difficulties[selector.value],2)
+    let difficulty = selector.value
+    rootRules.style.setProperty("--grid-divisor",selector.value)
     generateGrid(difficulty)
 })
 
